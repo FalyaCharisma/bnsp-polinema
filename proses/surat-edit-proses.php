@@ -18,7 +18,7 @@ if(isset($_POST['simpan'])){ //cek jika ada form yang disubmit
 		$file =  $nomor_surat.".".$tipe_file;
 
 		$folder = "../files/$file"; //tentukan folder untuk menyimpan file
-		@unlink ("$folder"); //hapus foto yang lama, tanda @untuk menyembunyikan warning jika file tidak ditemukan
+		@unlink ("$folder"); //hapus file yang lama, tanda @untuk menyembunyikan warning jika file tidak ditemukan
 		move_uploaded_file($lokasi_file, $folder); //apabila file berhasil diupload
 	} else {
 		$file=$foto;

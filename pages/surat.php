@@ -59,12 +59,12 @@ include'header.php';
                               $no = $posisi * 1;
                             }
 
-                            //select from tbanggota
+                            //select from tabel surat
                             $q_tampil_surat = mysqli_query($db, $query);
 
                               if(mysqli_num_rows($q_tampil_surat)> 0){
 
-                                  /*looping data anggota sesuai yang ada di database */
+                                  /*looping surat sesuai yang ada di database */
                                   while ($r_tampil_surat=mysqli_fetch_array($q_tampil_surat)) {
                                 
                                 ?>
