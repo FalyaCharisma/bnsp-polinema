@@ -52,13 +52,13 @@
         <ul class="nav">
           <h4>Menu</h4>
           <li class="nav-item">
-            <a class="nav-link" href="../logout.php">
+            <a class="nav-link" href="surat.php">
                <i class="icon-star menu-icon"></i>
               <span class="menu-title">Arsip</span>
             </a>
           </li>
            <li class="nav-item">
-            <a class="nav-link" href="../logout.php">
+            <a class="nav-link" href="about.php">
                <i class="icon-ban menu-icon"></i>
               <span class="menu-title">About</span>
             </a>

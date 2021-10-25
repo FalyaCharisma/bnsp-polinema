@@ -1,21 +1,20 @@
 <?php
 include'../koneksi.php'; 
+require("../vendor/autoload.php");
 
 $id_surat = $_GET['id'];
 $q_tampil_surat = mysqli_query($db, "SELECT * FROM surat WHERE id_surat = '$id_surat'");
 $r_tampil_surat= mysqli_fetch_array($q_tampil_surat);
-
-?>
-<?php
-include'header.php'; 
 ?>
 
- <div class="main-panel">
+<html>
+<body>
+	 <div class="main-panel">
         <div class="content-wrapper">
            <div class="col-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                <div id="label-page"><h3>Arsip Surat >> Lihat</h3></div>
+                <div id="label-page"><h3>Arsip Surat</h3></div>
 					<div id="content">
 						<table id="tabel-input">
 							<tr>
@@ -36,18 +35,21 @@ include'header.php';
 								</td>
 							</tr>
 						</table>
-						 <td>
-						 <br>
-                             <a href="surat.php" class="btn btn-danger btn-sm"><< Kembali</a>
-                             <a href="../proses/surat-unduh.php?id=<?php echo $r_tampil_surat['id_surat'];?>"class="btn btn-warning btn-sm">Unduh</a>
-                             <a href="surat-edit.php?id=<?php echo $r_tampil_surat['id_surat'];?>" class="btn btn-info btn-sm">Edit</a>    
-                        </td>
 					</div>
 				</div>
               </div>
             </div>
-        <!-- partial:partials/_footer.html -->
- <?php
-include'footer.php'; 
-?>
+</body>
+</html>
 
+<?php 
+
+$html = ob_get_clean(); 
+use Dompdf\Dompdf; 
+require_once '../vendor/autoload.php'; 
+$dompdf = new Dompdf(); 
+$dompdf->loadHtml($html); 
+$dompdf->setPaper('A4', 'portrait'); 
+$dompdf->render(); 
+$dompdf->stream(); 
+?>

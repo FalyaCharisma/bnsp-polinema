@@ -15,6 +15,7 @@ include'header.php';
                 <div class="card-body">
                   <h4 class="card-title">Arsip Surat</h4>
                   <h6>Berikut ini adalah surat-surat yang telah terbit dan diarsipkan. Klik "Lihat" pada kolom aksi untuk menampilkan surat.</h6>
+
                   <div class="table-responsive">
                     <table class="table">
                       <thead>
@@ -73,10 +74,9 @@ include'header.php';
                                   <td><?php echo $r_tampil_surat['judul']; ?></td>
                                   <td><?php echo $r_tampil_surat['waktu']; ?></td>
                                   <td>
-                                    <div class="tombol-opsi-container"><a href="surat-lihat.php?id=<?php echo $r_tampil_surat['id_surat'];?>" class="tombol">Lihat</a>
-                                    </div>
-                                    <div class="tombol-opsi-container"><a href="../proses/surat-hapus.php?id=<?php echo $r_tampil_surat['id_surat'];?>" onclick = "return confirm ('Apakah Anda Yakin Akan Menghapus Data Ini?')" class="tombol">Hapus</a>
-                                    </div>
+                                      <a href="../proses/surat-hapus.php?id=<?php echo $r_tampil_surat['id_surat'];?>" class="btn btn-danger btn-sm" onclick = "return confirm ('Apakah Anda Yakin Akan Menghapus Data Ini?')">Hapus</a>
+                                      <a href="../proses/surat-unduh.php?id=<?php echo $r_tampil_surat['id_surat'];?>"class="btn btn-warning btn-sm">Unduh</a>
+                                      <a href="surat-lihat.php?id=<?php echo $r_tampil_surat['id_surat'];?>" class="btn btn-info btn-sm">Lihat >></a>    
                                   </td>
                                 </tr>
                                 <?php 
@@ -89,6 +89,7 @@ include'header.php';
                             ?>
                           </tbody>
                     </table>
+
                       <?php
                         if(isset($_POST['pencarian'])){
                           if($_POST['pencarian']!=' '){
@@ -121,7 +122,7 @@ include'header.php';
                         }
                         ?>
                   </div>
-                  <a href="surat-input.php" class="card-title"><h6>Arsipkan Surat</h6></a>
+                  <a href="surat-input.php" class="btn btn-primary btn-sm"><h7>Arsipkan Surat</h7></a>
                 </div>
                 </div>
               </div>

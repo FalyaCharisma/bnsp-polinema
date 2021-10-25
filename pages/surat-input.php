@@ -50,8 +50,8 @@ include'header.php';
                          <input type="file" name="file" class="form-control" required="required">
                       </div>
                     </div>
-                    <button type="submit" name="simpan" class="btn btn-primary mr-2">Submit</button>
-                    <button class="btn btn-light">Cancel</button>
+                     <a href="surat.php" class="btn btn-light"><h7><< Kembali</h7></a>
+                    <button type="submit" name="simpan" class="btn btn-primary mr-2">Simpan</button>
                   </form>
                 </div>
               </div>
