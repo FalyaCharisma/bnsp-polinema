@@ -15,7 +15,7 @@ if(isset($_POST['simpan'])){
 		//Baca lokasi file sementara dan nama file dari form (fupload)
 		$lokasi_file = $_FILES['file']['tmp_name'];
 		$tipe_file = pathinfo($nama_file, PATHINFO_EXTENSION);
-		$file = $id_surat.".".$tipe_file;
+		$file = $nomor_surat.".".$tipe_file;
 
 		$folder = "../files/$file"; //Tentukan folder penyimpanan file
 		move_uploaded_file($lokasi_file, "$folder"); //Apabila file berhasil diupload

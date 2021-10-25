@@ -15,7 +15,6 @@ include'header.php';
                 <div class="card-body">
                   <h4 class="card-title">Arsip Surat</h4>
                   <h6>Berikut ini adalah surat-surat yang telah terbit dan diarsipkan. Klik "Lihat" pada kolom aksi untuk menampilkan surat.</h6>
-                  <a href="surat-input.php" class="card-title"><h6>Tambah Jadwal Sertifikasi</h6></a>
                   <div class="table-responsive">
                     <table class="table">
                       <thead>
@@ -74,7 +73,7 @@ include'header.php';
                                   <td><?php echo $r_tampil_surat['judul']; ?></td>
                                   <td><?php echo $r_tampil_surat['waktu']; ?></td>
                                   <td>
-                                    <div class="tombol-opsi-container"><a href="sertifikasi-edit.php?id=<?php echo $r_tampil_surat['id_surat'];?>" class="tombol">Edit</a>
+                                    <div class="tombol-opsi-container"><a href="surat-lihat.php?id=<?php echo $r_tampil_surat['id_surat'];?>" class="tombol">Lihat</a>
                                     </div>
                                     <div class="tombol-opsi-container"><a href="../proses/surat-hapus.php?id=<?php echo $r_tampil_surat['id_surat'];?>" onclick = "return confirm ('Apakah Anda Yakin Akan Menghapus Data Ini?')" class="tombol">Hapus</a>
                                     </div>
@@ -122,6 +121,7 @@ include'header.php';
                         }
                         ?>
                   </div>
+                  <a href="surat-input.php" class="card-title"><h6>Arsipkan Surat</h6></a>
                 </div>
                 </div>
               </div>
